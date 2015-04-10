@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+
+    <form-beans>
+    	<form-bean name="ParametersLoginClient" type="fr.uvsq.form.LoginClientForm"/>
+  		<form-bean name="ParametersSingUpClient" type="fr.uvsq.form.SingUpForm"/>
+  		<form-bean name="ParametersAjoutProduit" type="fr.uvsq.form.AjouterProduitForm"/>
+    </form-beans>
+
+    <global-forwards>
+        
+        
+        <forward
+            name="homepage"
+            path="/homepage.do"/>
+            
+        <forward
+            name="Inscription"
+            path="/Inscription.do"/>
+            
+      	<forward
+            name="Connexion"
+            path="/Connexion.do"/>
+            
+        <forward
+            name="ListeProduit"
+            path="/ListeProduit.do"/>
+            
+        <forward
+            name="ajouterPanier"
+            path="/ajouterPanier.do"/>
+        
+        <forward
+            name="MonPanier"
+            path="/MonPanier.do"/>
+            
+        <forward
+        name="detailsprod"
+        path="/detailsprod.do"/>
+        
+        <forward
+        name="Logout"
+        path="/Logout.do"/>
+        
+        <forward
+        name="EspaceClient"
+        path="/EspaceClient.do"/>
+        
+    </global-forwards>
+
+
+<!-- =========================================== Action Mapping Definitions -->
+
+    <action-mappings>
+           
+		<action
+            path="/Inscription"
+            forward="/pages/SingUp.jsp"/>
+           
+           
+           
+        <!-- <action
+         path="/detailsprod"
+         forward="/pages/shophomepage/index.jsp"/> -->
+           
+           
+		<action
+            path="/detailsprod"
+            type="fr.uvsq.controller.DetailsProduit" 
+           	validate="true"
+           	input="/pages/SingUp.jsp">
+	            <forward name="succesLog"  path="/pages/shop-item/index.jsp" />
+	            <forward name="echecLog" path="index.jsp" />
+        </action>
+                   
+		<action
+            path="/SingUp"
+            type="fr.uvsq.controller.SingUpAction" 
+            name="ParametersSingUpClient"
+           	validate="true"
+           	input="/pages/SingUp.jsp">
+	            <forward name="succesLog"  path="/pages/Connexion.jsp" />
+	            <forward name="echecLog" path="index.jsp" />
+        </action>
+        
+        <action
+            path="/Connexion"
+            forward="/pages/Connexion.jsp"/>
+            
+        <action
+			path="/EspaceClient"
+			forward="/pages/EspaceClient.jsp"/> 
+			
+        <action
+            path="/Login"
+            type="fr.uvsq.controller.LoginClientAction" 
+            name="ParametersLoginClient"
+           	validate="true"
+           	input="/pages/Connexion.jsp">
+	            <forward name="succesLog"  path="/pages/EspaceClient.jsp" />
+	            <forward name="echecLog" path="/pages/Connexion.jsp" />
+        </action>
+        
+         <action
+            path="/ListeProduit"
+            type="fr.uvsq.controller.ListeProduitAction"
+           	validate="true"
+           	input="/pages/Connexion.jsp">
+	            <forward name="succesLog"  path="/pages/shophomepage/index.jsp" />
+        </action>
+       
+        <action
+            path="/ajouterPanier"
+            type="fr.uvsq.controller.AjouterPanierAction"
+            name="ParametersAjoutProduitPanier"
+           	validate="true"
+           	input="/pages/Connexion.jsp">
+	            <forward name="succesLog"  path="/pages/LesProduits.jsp" />
+	            <forward name="echecLog"  path="/pages/Connexion.jsp" />
+        </action>
+        
+        <!-- <action
+            path="/MonPanier"
+            forward="/pages/MonPanier.jsp"/> -->
+            
+        <action
+            path="/MonPanier"
+            type="fr.uvsq.controller.MonPanierAction"
+           	validate="true"
+           	input="/pages/ErrorPage.jsp">
+	            <forward name="succesLog"  path="/pages/MonPanier.jsp" />
+	            <forward name="echecLog"  path="/pages/Connexion.jsp" />
+        </action>
+        
+        <action
+			path="/ajouterProduit"
+			forward="/pages/ajouterProduit.jsp"/> 
+			
+		<action
+			path="/versAjouterProduit" 
+			type="fr.uvsq.controller.AjoutProduitAction"
+			name="ParametersAjoutProduit"
+			input="/pages/ErrorPage.jsp">
+				    <forward name="succesLog" path= "/pages/ajouterProduit.jsp" />
+		</action>
+		<action
+			path="/Logout" 
+			type="fr.uvsq.controller.LogoutAction">
+				    <forward name="Logout" path= "/pages/Connexion.jsp" />
+		</action> 
+
+    </action-mappings>
+
+
+<!-- ======================================== Message Resources Definitions -->
+
+    <message-resources parameter="properties.MessageResources" />
+
+	<!-- Spring Struts plugin -->
+ 	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation"
+		value="/WEB-INF/classes/config/BeanLocations.xml" />
+  	</plug-in>
+
+</struts-config>
+
