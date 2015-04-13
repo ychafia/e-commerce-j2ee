@@ -22,6 +22,11 @@
     <link href="<%=request.getContextPath()%>/pages/TemplateConf/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="<%=request.getContextPath()%>/pages/TemplateConf/css/shop-homepage.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/pages/TemplateConf/css/goldenforms-pro.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/pages/TemplateConf/css/font-awesome.min.css">
+    
+    <script src="<%=request.getContextPath()%>/pages/TemplateConf/js/jquery-1.9.1.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,64 +37,60 @@
 
 </head>
 
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-				<%@ include file="/pages/includes/nav_bar_header.jsp" %>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<%@ include file="/pages/includes/nav_bar.jsp" %>
-            </div>
-            <!-- /.navbar-collapse -->
+<body class="frm-bg2">
+
+	<div class="goldenforms-pro">
+   		<div class="goldenforms-wrapper">
+              <div class="goldenforms-container gpro-container4">
+					<div class="frm-header">
+                     	<h4> <center>EDORA</center></h4>
+                    </div><!-- end .frm-header section -->
+					<div class="frm-body">
+					    <html:form action="Login.do" method="post">
+					  		<div class="spacer-b30">
+	                         	<div class="tagline"><span> Connectez-vous </span></div><!-- .tagline -->
+	                        </div>
+	                        
+	                        <div class="frm-row">
+								<div class="notification alert-warning spacer-t10">
+	                                <p><html:errors/></p>                                
+	                            </div><!-- end .notification section -->
+                            </div><br>
+                            
+                            <div class="frm-row">
+	                             <div class="frm-section colm colm6">
+	                                 <label class="field">
+	                                     <input type="text" class="uit-input" placeholder="exemple@exmple.ex" name="email">
+	                                 </label>
+	                             </div><!-- end section -->
+	                             
+	                             <div class="frm-section colm colm6">
+	                                 <label class="field">
+	                                     <input type="password" class="uit-input" placeholder="Mot de passe" name="mdp">
+	                                 </label>
+	                             </div><!-- end section -->
+	                         </div> <!-- end .frm-row section -->
+	                         
+	                         <div class="frm-footer">
+		                         <center>
+			                        	<button type="submit" class="uit-button btn-blue"> Valider </button>
+			                            <button type="reset" class="uit-button"> Annuler </button><br><br>
+			                            <html:link page="/Inscription.do"><bean:message key="ConnexionForm.inscrivez" /></html:link>
+										<html:link page="/ForgotMdp.do"><bean:message key="ConnexionForm.mdperdu" /></html:link>
+								 </center>
+	                         </div><!-- end .frm-footer section --> 
+	                         
+					  	</html:form>
+					</div>
+              </div>
         </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-			<center>
-	            <div class="col-md-9">
-						<h1>Connexion</h1><br>
-						<hr><br><br>
-						<hr><br><br>
-						<font color="red">
-							<html:errors/>
-						</font>
-						<html:form action="Login.do" method="post">
-							<bean:message key="ConnexionForm.email" />
-							<html:text property="email" size="30" maxlength="30" />
-							
-							<bean:message key="ConnexionForm.mdp" />
-							<html:password property="mdp" size="30" maxlength="30" />
-							<br><br>
-							<center>
-								<html:submit>Valider</html:submit>
-								<html:reset>Annuler</html:reset><br><br>
-							
-								<html:link page="/Inscription.do"><bean:message key="ConnexionForm.inscrivez" /></html:link>
-								<html:link page="/ForgotMdp.do"><bean:message key="ConnexionForm.mdperdu" /></html:link>
-							</center>
-						</html:form>
-						
-	            </div>
-			</center>
-        </div>
-
     </div>
-    <!-- /.container -->
-
-    <div class="container">
+   
+<!--     <div class="container">
 
         <hr>
 
-        <!-- Footer -->
+        Footer
         <footer>
             <div class="row">
                 <div class="col-lg-12">
@@ -98,7 +99,7 @@
             </div>
         </footer>
 
-    </div>
+    </div> -->
     <!-- /.container -->
 
     <!-- jQuery -->

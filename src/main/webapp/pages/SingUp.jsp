@@ -47,26 +47,13 @@
 	                    	<div class="spacer-b30">
 	                         	<div class="tagline"><span>Créez votre compte gratuitement </span></div><!-- .tagline -->
 	                        </div>
-	                        <%-- <font color="red">
-								<html:errors/>
-							</font> --%>
+	                        
 							<div class="frm-row">
 								<div class="notification alert-warning spacer-t10">
 	                                <p><html:errors/></p>                                
 	                            </div><!-- end .notification section -->
                             </div>
                             <br>
-	                        <div class="frm-row">
-	                             <div class="frm-section colm colm6">           
-	                                    <label class="field uit-select">
-	                                        <select name="civilite">
-	                                            <option value="0">Civilite</option>
-	                                            <option value="Monsieur"> Monsieur </option>
-	                                            <option value="Madame"> Madame </option>
-	                                        </select>                     
-	                                    </label>
-	                                </div><!-- end section -->
-	                         </div> <!-- end .frm-row section -->
 	                         
 	                         <div class="frm-row">
 	                             <div class="frm-section colm colm6">
@@ -95,17 +82,31 @@
 	                                 </label>
 	                             </div><!-- end section -->
 	                         </div> <!-- end .frm-row section --> 
-	                         
+	                         <div class="frm-row">
+	                             	<div class="frm-section colm colm6">           
+	                                    <label class="field uit-select">
+	                                        <select name="civilite">
+	                                            <option value="0">Civilite</option>
+	                                            <option value="Monsieur"> Monsieur </option>
+	                                            <option value="Madame"> Madame </option>
+	                                        </select>                     
+	                                    </label>
+	                                </div><!-- end section -->
+	                                <div class="frm-section colm colm6">
+		                                 <label class="field">
+		                                     <input type="text" class="uit-input" placeholder="Adresse mail" property="email" name="email">
+	                             	      </label>
+	                             	</div><!-- end section -->
+	                         </div> <!-- end .frm-row section -->
+	                         <br>
+	                         <div class="spacer-b30">
+	                         	<div class="tagline"><span> Adresse </span></div><!-- .tagline -->
+	                         </div>
+	                        
 	                         <div class="frm-row">
 	                             <div class="frm-section colm colm6">
 	                                 <label class="field">
 	                                     <input type="text" class="uit-input" placeholder="Téléphone" property="tel" name="tel">
-	                                 </label>
-	                             </div><!-- end section -->
-	                             
-	                             <div class="frm-section colm colm6">
-	                                 <label class="field">
-	                                     <input type="text" class="uit-input" placeholder="Adresse mail" property="email" name="email">
 	                                 </label>
 	                             </div><!-- end section -->
 	                         </div> <!-- end .frm-row section -->
@@ -147,8 +148,10 @@
 	                         </div> <!-- end .frm-row section -->
 	                         
 	                         <div class="frm-footer">
-	                        	<button type="submit" class="uit-button btn-blue"> Valider </button>
-	                            <button type="reset" class="uit-button"> Annuler </button>
+		                         <center>
+		                        	<button type="submit" class="uit-button btn-blue"> Valider </button>
+		                            <button type="reset" class="uit-button"> Annuler </button>
+		                         </center>
 	                         </div><!-- end .frm-footer section -->  
                          </html:form>
                     </div>
