@@ -37,6 +37,9 @@ public class Client implements Serializable{
 	@Column(name="emailClient", nullable=false, length=100)
 	private String emailClient;
 	
+	@Column(name="civilite", length=100)
+	private String civilite;
+	
 	@Column(name="telClient", nullable=false, length=100)
 	private int telClient;
 	
@@ -90,6 +93,12 @@ public class Client implements Serializable{
 	}
 	public final void setEmailClient(String emailClient) {
 		this.emailClient = emailClient;
+	}
+	public final String getCivilite() {
+		return civilite;
+	}
+	public final void setCivilite(String civilite) {
+		this.civilite = civilite;
 	}
 	public final int getTelClient() {
 		return telClient;

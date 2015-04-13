@@ -22,7 +22,10 @@
     <link href="<%=request.getContextPath()%>/pages/TemplateConf/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="<%=request.getContextPath()%>/pages/TemplateConf/css/shop-homepage.css" rel="stylesheet">
-
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/pages/TemplateConf/css/goldenforms-pro.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/pages/TemplateConf/css/font-awesome.min.css">
+    
+    <script src="<%=request.getContextPath()%>/pages/TemplateConf/js/jquery-1.9.1.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -32,109 +35,134 @@
 
 </head>
 
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-				<%@ include file="/pages/includes/nav_bar_header.jsp" %>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<%@ include file="/pages/includes/nav_bar.jsp" %>
-            </div>
-            <!-- /.navbar-collapse -->
+<body class="frm-bg2">
+   <div class="goldenforms-pro">
+   		<div class="goldenforms-wrapper">
+              <div class="goldenforms-container gpro-container4">
+           			<div class="frm-header">
+                     	<h4> <center>EDORA</center></h4>
+                    </div><!-- end .frm-header section -->
+                    <div class="frm-body">
+                    	<html:form action="SingUp.do" method="post">
+	                    	<div class="spacer-b30">
+	                         	<div class="tagline"><span>Créez votre compte gratuitement </span></div><!-- .tagline -->
+	                        </div>
+	                        <%-- <font color="red">
+								<html:errors/>
+							</font> --%>
+							<div class="frm-row">
+								<div class="notification alert-warning spacer-t10">
+	                                <p><html:errors/></p>                                
+	                            </div><!-- end .notification section -->
+                            </div>
+                            <br>
+	                        <div class="frm-row">
+	                             <div class="frm-section colm colm6">           
+	                                    <label class="field uit-select">
+	                                        <select name="civilite">
+	                                            <option value="0">Civilite</option>
+	                                            <option value="Monsieur"> Monsieur </option>
+	                                            <option value="Madame"> Madame </option>
+	                                        </select>                     
+	                                    </label>
+	                                </div><!-- end section -->
+	                         </div> <!-- end .frm-row section -->
+	                         
+	                         <div class="frm-row">
+	                             <div class="frm-section colm colm6">
+	                                 <label class="field">
+	                                     <input type="text" class="uit-input" placeholder="Nom" property="nom" name="nom">
+	                                 </label>
+	                             </div><!-- end section -->
+	                             
+	                             <div class="frm-section colm colm6">
+	                                 <label class="field">
+	                                     <input type="text" class="uit-input" placeholder="Prenom" property="prenom" name="prenom">
+	                                 </label>
+	                             </div><!-- end section -->
+	                         </div> <!-- end .frm-row section -->
+	                         
+	                         <div class="frm-row">
+	                             <div class="frm-section colm colm6">
+	                                 <label class="field">
+	                                     <input type="password" class="uit-input" placeholder="Mot de passe" property="mdp" name="mdp">
+	                                 </label>
+	                             </div><!-- end section -->
+	                             
+	                             <div class="frm-section colm colm6">
+	                                 <label class="field">
+	                                     <input type="password" class="uit-input" placeholder="Confirmer mot de passe" property="mdp2" name="mdp2">
+	                                 </label>
+	                             </div><!-- end section -->
+	                         </div> <!-- end .frm-row section --> 
+	                         
+	                         <div class="frm-row">
+	                             <div class="frm-section colm colm6">
+	                                 <label class="field">
+	                                     <input type="text" class="uit-input" placeholder="Téléphone" property="tel" name="tel">
+	                                 </label>
+	                             </div><!-- end section -->
+	                             
+	                             <div class="frm-section colm colm6">
+	                                 <label class="field">
+	                                     <input type="text" class="uit-input" placeholder="Adresse mail" property="email" name="email">
+	                                 </label>
+	                             </div><!-- end section -->
+	                         </div> <!-- end .frm-row section -->
+	                         
+	                         <div class="frm-row">
+	                             <div class="frm-section colm colm6">
+	                                 <label class="field">
+	                                     <input type="text" class="uit-input" placeholder="Numéro du domicile" property="numDomicile" name="numDomicile">
+	                                 </label>
+	                             </div><!-- end section -->
+	                             
+	                             <div class="frm-section colm colm6">
+	                                 <label class="field">
+	                                     <input type="text" class="uit-input" placeholder="Nom de la rue" property="nomRue" name="nomRue">
+	                                 </label>
+	                             </div><!-- end section -->
+	                         </div> <!-- end .frm-row section -->
+	                         
+	                         <div class="frm-row">
+	                             <div class="frm-section colm colm6">
+	                                 <label class="field">
+	                                     <input type="text" class="uit-input" placeholder="Etage" property="etage" name="etage">
+	                                 </label>
+	                             </div><!-- end section -->
+	                             
+	                             <div class="frm-section colm colm6">
+	                                 <label class="field">
+	                                     <input type="text" class="uit-input" placeholder="Ville" property="ville" name="ville">
+	                                 </label>
+	                             </div><!-- end section -->
+	                         </div> <!-- end .frm-row section -->
+	                         
+	                         <div class="frm-row">
+	                             <div class="frm-section colm colm6">
+	                                 <label class="field">
+	                                     <input type="text" class="uit-input" placeholder="Code postal" property="codePost" name="codePost">
+	                                 </label>
+	                             </div><!-- end section -->
+	                         </div> <!-- end .frm-row section -->
+	                         
+	                         <div class="frm-footer">
+	                        	<button type="submit" class="uit-button btn-blue"> Valider </button>
+	                            <button type="reset" class="uit-button"> Annuler </button>
+	                         </div><!-- end .frm-footer section -->  
+                         </html:form>
+                    </div>
+              </div>
         </div>
-        <!-- /.container -->
-    </nav>
-    <!-- Page Content -->
-    <div class="container">
+   </div>
+   
+    
 
-        <div class="row">
-
-            <div class="col-md-9">
-					<center><h1>Créez votre compte gratuitement</h1><br></center>
-					<hr><br><br>
-					
-					<html:form action="SingUp.do" method="post">
-						<table align="center">
-							<tr>
-								<td colspan="2">
-									<font color="red">
-										<html:errors/>
-									</font>
-								</td>
-							</tr>
-							<tr>
-								<td>Nom : </td>
-								<td><html:text property="nom" size="20" maxlength="20" /></td>
-							</tr>
-							<tr>
-								<td>Prenom : </td>
-								<td><html:text property="prenom" size="20" maxlength="20" /></td>
-							</tr>
-							<tr>
-								<td>Mot de passe : </td>
-								<td><html:password property="mdp" size="20" maxlength="20" /></td>
-							</tr>
-							<tr>
-								<td>Confirmation du mot de passe : </td>
-								<td><html:password property="mdp2" size="20" maxlength="20" /></td>
-							</tr>
-							<tr>
-								<td>Telephone : </td>
-								<td><html:text property="tel" size="20" maxlength="13" /></td>
-							</tr>
-							<tr>
-								<td>Adresse mail</td>
-								<td><html:text property="email" size="20" maxlength="30" /></td>
-							</tr>
-							<tr>
-							<tr><td colspan="2"><center>---------------------------------------</center></td></tr>
-							<tr>
-								<td>Numéro du domicile : </td>
-								<td><html:text property="numDomicile" size="20" maxlength="13" /></td>
-							</tr>
-							<tr>
-								<td>Nom de la rue</td>
-								<td><html:text property="nomRue" size="20" maxlength="30" /></td>
-							</tr>
-							<tr>
-								<td>Etage : </td>
-								<td><html:text property="etage" size="20" maxlength="13" /></td>
-							</tr>
-							<tr>
-								<td>Ville : </td>
-								<td><html:text property="ville" size="20" maxlength="13" /></td>
-							</tr>
-							<tr>
-								<td>Code postal : </td>
-								<td><html:text property="codePost" size="20" maxlength="13" /></td>
-							</tr>
-							
-							</tr>
-							<tr>
-								<td align="center" colspan="2"><html:submit>Valider</html:submit></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-							</tr>
-						</table>
-					</html:form>
-            </div>
-
-        </div>
-
-    </div>
-    <!-- /.container -->
-
-    <div class="container">
+    <!-- <div class="container">
 
         <hr>
 
-        <!-- Footer -->
+        Footer
         <footer>
             <div class="row">
                 <div class="col-lg-12">
@@ -143,7 +171,7 @@
             </div>
         </footer>
 
-    </div>
+    </div> -->
     <!-- /.container -->
 
     <!-- jQuery -->

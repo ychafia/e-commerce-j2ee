@@ -31,6 +31,7 @@ public class SingUpAction  extends ActionSupport{
 		clt.setPrenomClient(donnees.getPrenom());
 		clt.setEmailClient(donnees.getEmail());
 		clt.setMdpClient(clientBo.crypterMotDePasse(donnees.getMdp()));
+		clt.setCivilite(donnees.getCivilite());
 			adrC.setNumDomicil(donnees.getNumDomicile());
 			adrC.setRue(donnees.getNomRue());
 			adrC.setVille(donnees.getVille());

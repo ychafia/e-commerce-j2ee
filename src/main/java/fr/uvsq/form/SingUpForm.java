@@ -21,6 +21,7 @@ public class SingUpForm extends ActionForm {
 	private String etage;
 	private String ville;
 	private Integer codePost;
+	private String civilite;
 	
 	public final String getNom() {
 		return nom;
@@ -89,6 +90,12 @@ public class SingUpForm extends ActionForm {
 	public final void setCodePost(Integer codePost) {
 		this.codePost = codePost;
 	}
+	public final String getCivilite() {
+		return civilite;
+	}
+	public final void setCivilite(String civilite) {
+		this.civilite = civilite;
+	}
 	@Override
 	public ActionErrors validate(ActionMapping mapping,
 			HttpServletRequest request) {
@@ -100,9 +107,9 @@ public class SingUpForm extends ActionForm {
 		if(getPrenom() == null || getPrenom().length() < 2){
 			errors.add("prenom", new ActionMessage("erreur.prenom.required"));
 		}
-//		if(getTel().toString().length() < 9 || getTel().equals(null)){
-//			errors.add("tel", new ActionMessage("erreur.tel.required"));
-//		}
+		if(getCivilite().equals("0") || getCivilite().equals(null)){
+			errors.add("tel", new ActionMessage("erreur.civilite.required"));
+		}
 		if(getMdp() == null || getMdp2() == null ||!getMdp().equals(getMdp2())){
 			errors.add("mdp", new ActionMessage("erreur.mdp.required"));
 		}

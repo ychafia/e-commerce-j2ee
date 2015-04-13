@@ -14,6 +14,9 @@
 
     <global-forwards>
         
+        <forward
+            name="hometest"
+            path="/hometest.do"/>
         
         <forward
             name="homepage"
@@ -57,7 +60,11 @@
 <!-- =========================================== Action Mapping Definitions -->
 
     <action-mappings>
-           
+         
+         <action
+            path="/hometest"
+            forward="/pages/Test.jsp"/>
+         
 		<action
             path="/Inscription"
             forward="/pages/SingUp.jsp"/>
